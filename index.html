@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biplab Da's Milk Order Planner | NIT Agartala Gate 1</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <div class="header-badges">
+        <span class="badge badge-campus">NIT Agartala &bull; Gate 1</span>
+        <span class="badge badge-live">Live Field Tool v1.0</span>
+      </div>
+      <h1>Biplab Da's Milk Order Planner</h1>
+      <p class="subtitle">মা কালী টি স্টল &bull; Maa Kali Tea Stall, Jirania Station Road</p>
+      <div class="context-bar">
+        <span>Owner: <strong>Biplab Debnath</strong></span>
+        <span>&bull;</span>
+        <span>500ml Gomati Dairy Pouch Optimizer (Newsvendor Asymmetric Model)</span>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <!-- Input Panel -->
+      <section class="card input-card">
+        <h2 class="card-title">1. Tomorrow's Stall Conditions</h2>
+        <p class="card-desc">Set tomorrow's schedule and weather to get the 21:00 auto order.</p>
+
+        <div class="form-group">
+          <label class="input-label" for="daySelect">
+            Day of Week (সপ্তাহের দিন)
+          </label>
+          <select id="daySelect" class="form-select">
+            <option value="weekday" selected>Monday – Thursday (Regular Full Lab Day)</option>
+            <option value="friday">Friday (1st-Yr Half-Day Labs — Afternoon Slower)</option>
+            <option value="weekend">Saturday – Sunday (Hostel Students & Gate Only)</option>
+          </select>
+          <span class="help-text">Lab schedules directly govern 16:30 evening tea turnout.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="input-label" for="weatherSelect">
+            Weather Outlook (আবহাওয়া)
+          </label>
+          <select id="weatherSelect" class="form-select">
+            <option value="clear" selected>Clear / Overcast (পরিষ্কার আকাশ)</option>
+            <option value="afternoon_rain">Afternoon / Evening Rain (বিকেলে বৃষ্টি — Lab exit drops 25%)</option>
+            <option value="morning_rain">Morning Rain (সকালে বৃষ্টি — Huddled crowd +12%)</option>
+            <option value="heavy_rain">Heavy Continuous Rain (সারাদিন ভারী বৃষ্টি)</option>
+          </select>
+          <span class="help-text">Gate 1 road floods during afternoon downpours, trapping students inside.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="input-label" for="academicSelect">
+            Academic Status (কলেজের অবস্থা)
+          </label>
+          <select id="academicSelect" class="form-select">
+            <option value="regular" selected>Regular Academic Classes & Labs</option>
+            <option value="exam_week">Mid-Sem / End-Sem Exam Week (+15% Study Breaks)</option>
+            <option value="vacation">Semester Break / Vacation (-55% Low Footfall)</option>
+          </select>
+        </div>
+
+        <div class="form-group icebox-group">
+          <label class="input-label" for="iceboxInput">
+            Icebox Check: Fresh Usable Pouches Left Today
+          </label>
+          <div class="icebox-wrap">
+            <input type="number" id="iceboxInput" min="0" max="15" value="0" class="form-input">
+            <span class="unit-badge">unopened Gomati packets</span>
+          </div>
+          <span class="help-text">Pouches remaining fresh in melting ice to carry into tomorrow morning.</span>
+        </div>
+      </section>
+
+      <!-- Output Prescription Panel -->
+      <section class="card output-card">
+        <h2 class="card-title">2. Recommended Gomati Order (21:00 Call)</h2>
+        <p class="card-desc">Call delivery driver before 9 PM to prevent morning shortage or waste.</p>
+
+        <!-- Big Hero Metric -->
+        <div class="prescription-hero">
+          <span class="hero-label">Order Tonight by 21:00</span>
+          <div class="hero-metric-wrap">
+            <span class="hero-number" id="pouchOrderCount">28</span>
+            <span class="hero-unit">Gomati Packets <span id="litersText" style="color:#94a3b8; font-size: 0.95rem;">(14.0 L)</span></span>
+          </div>
+          <p class="hero-sub">Covers full day demand in discrete 2-packet dekschi batches.</p>
+        </div>
+
+        <!-- Operational Breakdown -->
+        <div class="operational-breakdown">
+          <div class="breakdown-box">
+            <span class="breakdown-title">Brewing Batches</span>
+            <span class="breakdown-val" id="dekschiCount">14 Dekschis</span>
+          </div>
+          <div class="breakdown-box">
+            <span class="breakdown-title">Estimated Cups</span>
+            <span class="breakdown-val" id="cupsOutput">~252 Cups</span>
+          </div>
+          <div class="breakdown-box">
+            <span class="breakdown-title">Milk Procurement</span>
+            <span class="breakdown-val" id="milkCost">₹728</span>
+          </div>
+          <div class="breakdown-box">
+            <span class="breakdown-title">Projected Revenue</span>
+            <span class="breakdown-val" id="projectedRevenue">₹2,520</span>
+          </div>
+        </div>
+
+        <!-- Financial Exposure Matrix -->
+        <div class="financial-matrix">
+          <div class="fin-item">
+            <span class="fin-title">Net Daily Margin</span>
+            <span class="fin-val val-green" id="netMargin">₹1,792</span>
+          </div>
+          <div class="fin-item">
+            <span class="fin-title">Spoilage Exposure</span>
+            <span class="fin-val val-amber" id="spoilageRisk">₹0</span>
+          </div>
+          <div class="fin-item">
+            <span class="fin-title">Shortage Exposure</span>
+            <span class="fin-val val-blue" id="shortageRisk">₹0</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Fieldwork Data Modal Section -->
+    <section class="card data-card">
+      <div class="data-header">
+        <div>
+          <h3 style="color:#fff;">Empirical Baseline Data (24 Field Intervals)</h3>
+          <p style="font-size:0.85rem; color:#94a3b8;">Logged live on-site outside NIT Agartala Gate 1 on 18-Nov & 19-Nov 2026.</p>
+        </div>
+        <button id="toggleDataBtn" class="btn-secondary">Show Raw Observation Table</button>
+      </div>
+
+      <div id="dataTableWrap" class="table-wrap hidden">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Weather</th>
+              <th>Pouches Opened</th>
+              <th>Cups Sold</th>
+              <th>Retail Tetra Bought</th>
+              <th>Surplus / Spoiled</th>
+              <th>Field Notes</th>
+            </tr>
+          </thead>
+          <tbody id="dataBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Operational Failure Boundaries -->
+    <section class="card boundary-card">
+      <h3>Operational Boundaries: What This Tool Should NOT Be Trusted For</h3>
+      <ul class="boundary-list">
+        <li><strong>Sudden Campus Events / Cultural Fests:</strong> Unscheduled sports meets or fests bring 200+ outsiders to Gate 1, violating the baseline capacity.</li>
+        <li><strong>Late Evening Monsoon Cloudbursts (after 16:30):</strong> If rain starts <em>after</em> the afternoon dekschis are already boiling, leftover tea cannot be salvaged.</li>
+        <li><strong>Early Sweet Shop Closures:</strong> The model assumes surplus evening milk can be offloaded to Gopal Mishti Dokan at ₹22 before 19:15. If the sweet shop closes early, unsold packets suffer full ₹26 spoilage.</li>
+      </ul>
+    </section>
+
+    <footer class="app-footer">
+      <p>Built by <strong>Ram Pedapati</strong> (NIT Agartala, Class of 2027) &bull; 1-Day Take-Home Engineering Assignment</p>
+      <p>Local Repository: <code>Desktop\fire ai</code></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

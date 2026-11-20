@@ -1,0 +1,25 @@
+entry_id,date,time_window,weather,academic_status,pouches_opened,cups_sold,tetra_bought,pouches_surplus_or_spoiled,notes
+1,2026-11-18,07:00-08:00,Clear,Regular Classes,2,16,0,0,Stall opened at 6:45 AM; morning walkers & campus sweepers
+2,2026-11-18,08:00-09:00,Clear,Regular Classes,4,35,0,0,Morning class rush; 1st & 2nd yr students arriving through Gate 1
+3,2026-11-18,09:00-10:00,Clear,Regular Classes,2,19,0,0,Lectures underway; quiet lull period
+4,2026-11-18,10:00-11:00,Clear,Regular Classes,2,17,0,0,Campus security guards & auto drivers from Jirania stand
+5,2026-11-18,11:00-12:00,Clear,Regular Classes,3,26,0,0,Short interval between morning classes; steady tea queue
+6,2026-11-18,12:00-13:00,Clear,Regular Classes,2,18,0,0,Lunch rush starting; mostly biscuits and light tea
+7,2026-11-18,13:00-14:00,Clear,Regular Classes,3,27,0,0,Post-lunch crowd from Mechanical workshop
+8,2026-11-18,14:00-15:00,Clear,Regular Classes,1,11,0,0,Afternoon lab sessions started; quiet stall
+9,2026-11-18,15:00-16:00,Clear,Regular Classes,2,19,0,0,Day scholars leaving campus early
+10,2026-11-18,16:00-17:00,Clear,Regular Classes,6,52,2,0,B.Tech 3rd yr lab ended at 16:30; milk ran out at 16:40; bought 2 Amul tetra packs from Sarkar Store
+11,2026-11-18,17:00-18:00,Clear,Regular Classes,4,36,2,0,Hostel students evening gathering; bought 2 more tetra packs (total 4 emergency tetra)
+12,2026-11-18,18:00-19:00,Clear,Regular Classes,2,17,0,0,Stall closing at 19:15; zero milk left; Biplab Da lost Rs 40 penalty
+13,2026-11-19,07:00-08:00,Clear,Regular Classes,2,15,0,0,Gomati auto dropped 32 packets (Biplab over-ordered due to yesterday's shortage)
+14,2026-11-19,08:00-09:00,Clear,Regular Classes,4,33,0,0,Steady morning student turnout
+15,2026-11-19,09:00-10:00,Clear,Regular Classes,2,18,0,0,Lectures ongoing
+16,2026-11-19,10:00-11:00,Overcast,Regular Classes,2,16,0,0,Sky turned dark over Jirania; humid breeze
+17,2026-11-19,11:00-12:00,Overcast,Regular Classes,3,28,0,0,Pre-lunch break; staff from administrative building
+18,2026-11-19,12:00-13:00,Overcast,Regular Classes,2,17,0,0,Lunch hour
+19,2026-11-19,13:00-14:00,Overcast,Regular Classes,2,19,0,0,Quiet period
+20,2026-11-19,14:00-15:00,Overcast,Regular Classes,1,10,0,0,Lab sessions in session
+21,2026-11-19,15:00-16:00,Overcast,Regular Classes,2,16,0,0,Light tea sales
+22,2026-11-19,16:00-17:00,Rain Shower,Regular Classes,2,14,0,0,Sudden heavy rain at 16:15; gate path waterlogged; students stayed inside campus
+23,2026-11-19,17:00-18:00,Rain Shower,Regular Classes,1,9,0,0,Drizzle continued; evening footfall collapsed
+24,2026-11-19,18:00-19:00,Clear,Regular Classes,1,8,0,5,Rain stopped; 5 Gomati packets left over; 2 offloaded to sweet shop at Rs 22 (Rs 8 loss), 3 spoiled overnight (Rs 78 loss)
